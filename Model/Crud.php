@@ -1,6 +1,6 @@
 <?php
 namespace Excellence\Operation\Model;
-class Crud extends \Magento\Framework\Model\AbstractModel implements \Excellence\Operation\Api\Data\CrudInterface, \Magento\Framework\DataObject\IdentityInterface
+class Crud extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
 {
     const CACHE_TAG = 'excellence_operation_crud';
 

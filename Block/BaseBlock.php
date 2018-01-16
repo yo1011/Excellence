@@ -5,6 +5,7 @@ use Magento\Framework\UrlFactory;
 class BaseBlock extends \Magento\Framework\View\Element\Template
 {
     protected $_crudFactory;
+    
     public $_coreRegistry;
 
     public function __construct( \Magento\Framework\Registry $coreRegistry,

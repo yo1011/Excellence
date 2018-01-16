@@ -1,52 +1,25 @@
 <?php
-/**
- * Copyright © 2015 Excellencecommerce. All rights reserved.
- */
+
 namespace Excellence\Operation\Model;
 
-/**
- * Operation Config model
- */
 class Config extends \Magento\Framework\DataObject
 {
 
-	/**
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
+	
     protected $_storeManager;
-	/**
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface 
-     */
+	
     protected $_scopeConfig;
-	/**
-     * @var \Magento\Framework\App\Config\ValueInterface
-     */
+	
     protected $_backendModel;
-	/**
-     * @var \Magento\Framework\DB\Transaction
-     */
+	
     protected $_transaction;
-	/**
-     * @var \Magento\Framework\App\Config\ValueFactory
-     */
+	
     protected $_configValueFactory;
-	/**
-     * @var int $_storeId
-     */
+	
     protected $_storeId;
-	/**
-     * @var string $_storeCode
-     */
+	
     protected $_storeCode;
 
-	/**
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager,
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-     * @param \Magento\Framework\App\Config\ValueInterface $backendModel,
-     * @param \Magento\Framework\DB\Transaction $transaction,
-     * @param \Magento\Framework\App\Config\ValueFactory $configValueFactory,
-     * @param array $data
-     */
     public function __construct(
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
@@ -65,19 +38,10 @@ class Config extends \Magento\Framework\DataObject
 		$this->_storeCode=$this->_storeManager->getStore()->getCode();
 	}
 	
-	/**
-	 * Function for getting Config value of current store
-     * @param string $path,
-     */
 	public function getCurrentStoreConfigValue($path){
 		return $this->_scopeConfig->getValue($path,'store',$this->_storeCode);
 	}
 	
-	/**
-	 * Function for setting Config value of current store
-     * @param string $path,
-	 * @param string $value,
-     */
 	public function setCurrentStoreConfigValue($path,$value){
 		$data = [
                     'path' => $path,
