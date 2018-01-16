@@ -1,0 +1,39 @@
+<?php 
+	$collections=$block->information();
+	$id=1;
+?>
+
+
+<a href=<?php echo $this->getUrl("operation/form/index/"); ?> class="user_add_link level-top ui-corner-all" id="ui-id-3" tabindex="-1" role="menuitem"><span>ADD NEW USER</span></a>
+
+<table class="user_table">
+  <tr class="user_table">
+    <th class="user_table">Id</th>
+    <th class="user_table">Name</th>
+    <th class="user_table">Email</th> 
+    <th class="user_table">Address</th>
+    <th class="user_table">Status</th>
+    <th class="user_table">Action</th>
+  </tr>
+<?php foreach($collections as $collection){?>
+  <tr class="user_table">
+    <td class="user_table"><?php echo $id; //echo $id;?></td>
+    <td class="user_table"><?php echo $collection['name'];?></td>
+    <td class="user_table"><?php echo $collection['email'];?></td>
+    <td class="user_table"><?php echo $collection['address'];?></td>
+    <td class="user_table"><?php if($collection['is_active']==1){echo "Active";}else{echo "Deactive";}?></td>
+    <td class="actions user_table"><div class="actions">
+                <button class="action submit_action subscribe primary" title="Edit" type="submit">
+                    <a href=<?php echo $this->getUrl('operation/form/index/id=.', array('id' => $collection['excellence_operation_crud_id'])); ?> class="user_edit_link level-top ui-corner-all" id="ui-id-3" tabindex="-1" role="menuitem"><span>Edit</span></a>
+                </button>
+            </div>
+            <div class="actions">
+                <button class="action delete_action subscribe primary" title="Delete" type="submit">
+                    <a href=<?php echo $this->getUrl('operation/form/index/id=.', array('delete_id' => $collection['excellence_operation_crud_id'])); ?> class="user_edit_link level-top ui-corner-all" id="ui-id-3" tabindex="-1" role="menuitem"><span>Delete</span></a>
+                </button>
+            </div>
+    </td>
+    <?php $id++ ?>
+  </tr>
+<?php } ?>
+</table>
