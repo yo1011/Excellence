@@ -15,7 +15,7 @@ class BaseBlock extends \Magento\Framework\View\Element\Template
     {
     	$this->_coreRegistry = $coreRegistry;
     	$this->_crudFactory = $crudFactory;
-		parent::__construct($context);
+	parent::__construct($context);
 	
     }
 }

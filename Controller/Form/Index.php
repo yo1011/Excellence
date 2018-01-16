@@ -51,7 +51,6 @@ class Index extends \Magento\Framework\App\Action\Action
                 $this->_redirect('operation/operation/index');
                 return;
             }
-
        }
     } 
 }

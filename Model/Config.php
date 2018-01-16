@@ -3,9 +3,7 @@
 namespace Excellence\Operation\Model;
 
 class Config extends \Magento\Framework\DataObject
-{
-
-	
+{	
     protected $_storeManager;
 	
     protected $_scopeConfig;
