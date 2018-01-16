@@ -8,7 +8,7 @@ class Index extends BaseBlock
 	$registeredUser = $this->_crudFactory->create();
         $collection = $registeredUser->getCollection();
         foreach($collection as $row){
-	     $information[] = $row->getData();
+            $information[] = $row->getData();
         }
         return $information;
     }
